@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_04_142611) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_04_144206) do
+  create_table "apartments", force: :cascade do |t|
+    t.boolean "rented"
+    t.string "block"
+    t.string "number"
+    t.integer "owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_apartments_on_owner_id"
+  end
+
   create_table "owners", force: :cascade do |t|
     t.string "name"
     t.string "rg"
@@ -40,4 +50,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_142611) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "apartments", "owners"
 end

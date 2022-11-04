@@ -1,0 +1,37 @@
+<%= form_with(model: apartment) do |form| %>
+  <% if apartment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
+
+      <ul>
+        <% apartment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :rented, style: "display: block" %>
+    <%= form.check_box :rented %>
+  </div>
+
+  <div>
+    <%= form.label :block, style: "display: block" %>
+    <%= form.text_field :block %>
+  </div>
+
+  <div>
+    <%= form.label :number, style: "display: block" %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div>
+    <%= form.label :owner_id, style: "display: block" %>
+    <%= form.collection_select :owner_id, @owners, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
