@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_04_141533) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_04_142611) do
   create_table "owners", force: :cascade do |t|
     t.string "name"
     t.string "rg"
@@ -18,6 +18,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_141533) do
     t.string "email"
     t.string "phone"
     t.boolean "authorized_wpp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tenants", force: :cascade do |t|
+    t.string "name"
+    t.string "rg"
+    t.date "birthday"
+    t.string "email"
+    t.string "phone"
+    t.boolean "authorize_wpp"
+    t.date "moving_date"
+    t.string "company_name"
+    t.string "contact"
+    t.date "end_moving_date"
+    t.string "company_phone"
+    t.string "contact_name"
+    t.string "cnpj"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
