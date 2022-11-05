@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :emergencies
+  resources :employees
   resources :pets
   resources :vehicles
   resources :residents

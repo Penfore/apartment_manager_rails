@@ -1,0 +1,4 @@
+class Emergency < ApplicationRecord
+  belongs_to :tenant
+  belongs_to :owner
+end

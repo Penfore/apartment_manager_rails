@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_05_121230) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_05_122106) do
   create_table "apartment_tenants", force: :cascade do |t|
     t.integer "apartment_id", null: false
     t.integer "tenant_id", null: false
@@ -29,6 +29,30 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_121230) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_apartments_on_owner_id"
+  end
+
+  create_table "emergencies", force: :cascade do |t|
+    t.integer "tenant_id", null: false
+    t.integer "owner_id", null: false
+    t.string "name"
+    t.string "parentage"
+    t.string "contact"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_emergencies_on_owner_id"
+    t.index ["tenant_id"], name: "index_emergencies_on_tenant_id"
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.integer "tenant_id", null: false
+    t.integer "owner_id", null: false
+    t.string "name"
+    t.string "role"
+    t.string "shift"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_employees_on_owner_id"
+    t.index ["tenant_id"], name: "index_employees_on_tenant_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -101,6 +125,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_121230) do
   add_foreign_key "apartment_tenants", "apartments"
   add_foreign_key "apartment_tenants", "tenants"
   add_foreign_key "apartments", "owners"
+  add_foreign_key "emergencies", "owners"
+  add_foreign_key "emergencies", "tenants"
+  add_foreign_key "employees", "owners"
+  add_foreign_key "employees", "tenants"
   add_foreign_key "pets", "owners"
   add_foreign_key "pets", "tenants"
   add_foreign_key "residents", "owners"

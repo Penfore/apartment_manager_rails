@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tenant: one
+  owner: one
+  name: MyString
+  parentage: MyString
+  contact: MyString
+
+two:
+  tenant: two
+  owner: two
+  name: MyString
+  parentage: MyString
+  contact: MyString
