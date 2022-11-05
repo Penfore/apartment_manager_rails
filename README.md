@@ -2,10 +2,16 @@
 
 ## Requirements
 
-Basically Ruby and Rails are required.
+* Ruby
+
+* Rails
+
+* NodeJs
 
 You can follow the [RVM](https://rvm.io/) guide for installing Ruby along with Rails.
 The Ruby version can be found in the file `.ruby-version` and practically any subversion of Rails 7 will work.
+
+For installing NodeJS you can use [NVM](https://github.com/nvm-sh/nvm) or install directly from the [NodeJS website](https://nodejs.org/en/).
 
 **WARNING**
 
