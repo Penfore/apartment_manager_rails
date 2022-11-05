@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :residents
   resources :apartment_tenants
   resources :apartments
   resources :tenants
