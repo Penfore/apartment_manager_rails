@@ -1,24 +1,30 @@
-# README
+# Apartment Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+Basically Ruby and Rails are required.
 
-* Ruby version
+You can follow the [RVM](https://rvm.io/) guide for installing Ruby along with Rails.
+The Ruby version can be found in the file `.ruby-version` and practically any subversion of Rails 7 will work.
 
-* System dependencies
+**WARNING**
 
-* Configuration
+Windows user might need to use [WSL](https://learn.microsoft.com/pt-br/windows/wsl/) since some Ruby gems used in Rails will not work on Windows.
 
-* Database creation
+## Running
 
-* Database initialization
+Enter the app root folder. Ex. `./apartment_manager_rails`
 
-* How to run the test suite
+Run the following commands on yout terminal.
 
-* Services (job queues, cache servers, search engines, etc.)
+For creating your local database:
 
-* Deployment instructions
+`rails db:create`
 
-* ...
+For running the migration files:
+
+`rails db:migrate`
+
+Now you need to start the server:
+
+`rails s`
