@@ -1,0 +1,2 @@
+module ApartmentTenantsHelper
+end

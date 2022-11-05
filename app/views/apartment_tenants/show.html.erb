@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @apartment_tenant %>
+
+<div>
+  <%= link_to "Edit this apartment tenant", edit_apartment_tenant_path(@apartment_tenant) %> |
+  <%= link_to "Back to apartment tenants", apartment_tenants_path %>
+
+  <%= button_to "Destroy this apartment tenant", @apartment_tenant, method: :delete %>
+</div>
