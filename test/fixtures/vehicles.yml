@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tenant: one
+  owner: one
+  brand: MyString
+  model: MyString
+  color: MyString
+  license_plate: MyString
+
+two:
+  tenant: two
+  owner: two
+  brand: MyString
+  model: MyString
+  color: MyString
+  license_plate: MyString

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_05_120108) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_05_121230) do
   create_table "apartment_tenants", force: :cascade do |t|
     t.integer "apartment_id", null: false
     t.integer "tenant_id", null: false
@@ -40,6 +40,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_120108) do
     t.boolean "authorized_wpp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.integer "tenant_id", null: false
+    t.integer "owner_id", null: false
+    t.string "name"
+    t.string "specie"
+    t.string "breed"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_pets_on_owner_id"
+    t.index ["tenant_id"], name: "index_pets_on_tenant_id"
   end
 
   create_table "residents", force: :cascade do |t|
@@ -72,9 +85,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_120108) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "vehicles", force: :cascade do |t|
+    t.integer "tenant_id", null: false
+    t.integer "owner_id", null: false
+    t.string "brand"
+    t.string "model"
+    t.string "color"
+    t.string "license_plate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_vehicles_on_owner_id"
+    t.index ["tenant_id"], name: "index_vehicles_on_tenant_id"
+  end
+
   add_foreign_key "apartment_tenants", "apartments"
   add_foreign_key "apartment_tenants", "tenants"
   add_foreign_key "apartments", "owners"
+  add_foreign_key "pets", "owners"
+  add_foreign_key "pets", "tenants"
   add_foreign_key "residents", "owners"
   add_foreign_key "residents", "tenants"
+  add_foreign_key "vehicles", "owners"
+  add_foreign_key "vehicles", "tenants"
 end
