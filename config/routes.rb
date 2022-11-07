@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+
   resources :emergencies
   resources :employees
   resources :pets
@@ -8,8 +10,4 @@ Rails.application.routes.draw do
   resources :apartments
   resources :tenants
   resources :owners
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
