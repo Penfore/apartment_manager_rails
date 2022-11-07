@@ -29,4 +29,40 @@
     <%= owner.authorized_wpp %>
   </p>
 
+  <p>
+    <strong>Residents:</strong>
+    <div id="residents">
+      <% owner.residents.each do |resident| %>
+      <%= resident.name %>
+    <% end %>
+    </div>
+  </p>
+
+  <p>
+    <strong>Vehicles:</strong>
+    <div id="vehicles">
+      <% owner.vehicles.each do |vehicle| %>
+      <%= vehicle.license_plate %>
+    <% end %>
+    </div>
+  </p>
+
+  <p>
+    <strong>Pets:</strong>
+    <div id="pets">
+      <% owner.pets.each do |pet| %>
+      <%= pet.name %>
+    <% end %>
+    </div>
+  </p>
+
+  <p>
+    <strong>Employees:</strong>
+    <div id="employees">
+      <% owner.employees.each do |employee| %>
+      <%= employee.name %>
+    <% end %>
+    </div>
+  </p>
+
 </div>
