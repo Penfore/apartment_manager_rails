@@ -30,6 +30,15 @@
   </p>
 
   <p>
+    <strong>Apartments:</strong>
+    <div id="apartments">
+      <% owner.apartments.each do |apartment| %>
+      <%= apartment.number %>
+    <% end %>
+    </div>
+  </p>
+
+  <p>
     <strong>Residents:</strong>
     <div id="residents">
       <% owner.residents.each do |resident| %>
