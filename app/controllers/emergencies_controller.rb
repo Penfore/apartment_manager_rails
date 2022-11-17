@@ -19,6 +19,8 @@ class EmergenciesController < ApplicationController
 
   # GET /emergencies/1/edit
   def edit
+    @tenants = Tenant.all
+    @owners = Owner.all
   end
 
   # POST /emergencies or /emergencies.json

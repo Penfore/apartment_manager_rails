@@ -19,6 +19,8 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+    @tenants = Tenant.all
+    @owners = Owner.all
   end
 
   # POST /employees or /employees.json

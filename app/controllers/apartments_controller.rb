@@ -18,6 +18,7 @@ class ApartmentsController < ApplicationController
 
   # GET /apartments/1/edit
   def edit
+    @owners = Owner.all
   end
 
   # POST /apartments or /apartments.json

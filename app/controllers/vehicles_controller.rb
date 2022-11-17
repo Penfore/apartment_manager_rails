@@ -19,6 +19,8 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/1/edit
   def edit
+    @tenants = Tenant.all
+    @owners = Owner.all
   end
 
   # POST /vehicles or /vehicles.json

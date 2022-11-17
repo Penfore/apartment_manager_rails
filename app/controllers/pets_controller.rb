@@ -19,6 +19,8 @@ class PetsController < ApplicationController
 
   # GET /pets/1/edit
   def edit
+    @tenants = Tenant.all
+    @owners = Owner.all
   end
 
   # POST /pets or /pets.json
