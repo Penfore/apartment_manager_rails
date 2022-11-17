@@ -3,7 +3,7 @@ class TenantsController < ApplicationController
 
   # GET /tenants or /tenants.json
   def index
-    @tenants = Tenant.all
+    @tenants = Tenant.where(["name LIKE ?", "%#{params[:search]}%"])
   end
 
   # GET /tenants/1 or /tenants/1.json
